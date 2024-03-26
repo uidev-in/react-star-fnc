@@ -12,7 +12,7 @@ export type ReactStarsProps = {
   count?: number;
   edit?: boolean;
   half?: boolean;
-  onChange: (val: number) => void;
+  onChange?: (val: number) => void;
   selectedColor?: string;
   size?: number;
   unSelectedColor?: string;
