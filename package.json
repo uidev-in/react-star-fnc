@@ -1,10 +1,9 @@
 {
-  "name": "react-stars-18",
-  "description": "",
-  "version": "0.0.0",
-  "author": "",
-  "license": "",
-  "keywords": [],
+  "name": "react-star-fnc",
+  "description": "React Star Plugin",
+  "version": "0.1.0",
+  "license": "GPL-3.0",
+  "keywords": ["react", "star", "static", "component"],
   "repository": {
     "type": "git",
     "url": ""
