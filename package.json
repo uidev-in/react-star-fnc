@@ -1,9 +1,14 @@
 {
   "name": "react-star-fnc",
   "description": "React Star Plugin",
-  "version": "0.1.0",
+  "version": "0.2.0-0",
   "license": "GPL-3.0",
-  "keywords": ["react", "star", "static", "component"],
+  "keywords": [
+    "react",
+    "star",
+    "static",
+    "component"
+  ],
   "repository": {
     "type": "git",
     "url": ""
