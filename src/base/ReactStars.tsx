@@ -105,6 +105,7 @@ export function ReactStars(props: Config) {
     let index = Number(event.currentTarget.getAttribute('data-index'));
 
     if (props.isHalf) {
+      // @ts-ignore
       const isAtHalf = moreThanHalf(event);
       setHalfStarHidden(isAtHalf);
       if (isAtHalf) index += 1;
@@ -152,6 +153,7 @@ export function ReactStars(props: Config) {
     let index = Number(event.currentTarget.getAttribute('data-index'));
     let innerValue;
     if (isHalf) {
+      // @ts-ignore
       const isAtHalf = moreThanHalf(event);
       setHalfStarHidden(isAtHalf);
       if (isAtHalf) index += 1;
@@ -247,6 +249,7 @@ export function ReactStars(props: Config) {
               isHalf,
             }}
             onMouseOver={mouseOver}
+            // eslint-disable-next-line react/jsx-no-bind
             onMouseLeave={mouseLeave}
             onClick={onClick}
             halfStarHidden={halfStarHidden}
