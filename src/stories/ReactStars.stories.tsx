@@ -25,8 +25,6 @@ CustomIcon.args = {
   size: 50,
   count: 10,
   char: '',
-  unSelectedColor: '#ff9900',
-  selectedColor: '#6599ff',
   onChange: (newValue: any) => {
     console.log(`Example 2: new value is ${newValue}`);
   },
@@ -37,7 +35,7 @@ export const WithoutHalf = Template.bind({});
 WithoutHalf.args = {
   size: 40,
   count: 7,
-  half: false,
+  isHalf: true,
   value: 4,
   onChange: (newValue: any) => {
     console.log(`Example 3: new value is ${newValue}`);

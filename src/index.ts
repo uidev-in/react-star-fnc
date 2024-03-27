@@ -1,1 +1,1 @@
-export * from './ReactStars';
+export * from './base/ReactStars';
