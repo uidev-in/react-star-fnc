@@ -19,6 +19,15 @@ Primary.args = {
   edit: false,
 };
 
+export const PrimaryHalf = Template.bind({});
+
+PrimaryHalf.args = {
+  size: 30,
+  value: 2.5,
+  edit: false,
+  isHalf: true,
+};
+
 export const CustomIcon = Template.bind({});
 
 CustomIcon.args = {
@@ -33,6 +42,18 @@ CustomIcon.args = {
 export const WithoutHalf = Template.bind({});
 
 WithoutHalf.args = {
+  size: 40,
+  count: 7,
+  isHalf: false,
+  value: 4,
+  onChange: (newValue: any) => {
+    console.log(`Example 3: new value is ${newValue}`);
+  },
+};
+
+export const WithHalf = Template.bind({});
+
+WithHalf.args = {
   size: 40,
   count: 7,
   isHalf: true,

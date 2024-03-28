@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Star from './star';
 import { Config } from './ReactStars.types';
 
@@ -49,37 +49,7 @@ export function ReactStars(props: Config) {
     classNames = '',
     isHalf = false,
   } = props;
-  const [uniqueness, setUniqueness] = useState('');
-  const [currentValue, setCurrentValue] = useState(0);
-  const [stars, setStars] = useState<Array<{ active: boolean; id: string }>>(
-    []
-  );
-  const isUsingIcons = iconsUsed(props);
-  const [halfStarAt, setHalfStarAt] = useState(Math.floor(value || 0));
-  const [halfStarHidden, setHalfStarHidden] = useState(
-    isHalf && value % 1 < 0.5
-  );
-
-  const createUniqueness = () => {
-    setUniqueness(`${Math.random()}`.replace('.', ''));
-  };
-
-  useEffect(() => {
-    validateInitialValue(value, count);
-    setStars(getStars(value));
-    createUniqueness();
-  }, []);
-
-  const validateInitialValue = (innerValue: number, innerCount: number) => {
-    if (innerValue < 0 || innerValue > innerCount) {
-      setCurrentValue(0);
-    } else {
-      setCurrentValue(innerValue);
-    }
-  };
-
-  const isDecimal = (innerValue: number) => innerValue % 1 === 0;
-
+  const uniqueness = `${Math.random()}`.replace('.', '');
   const getRate = () =>
     isHalf ? Math.floor(currentValue) : Math.round(currentValue);
 
@@ -98,6 +68,23 @@ export function ReactStars(props: Config) {
     }
     return innerStars;
   };
+  const [currentValue, setCurrentValue] = useState(() => {
+    if (value < 0 || value > count) {
+      return 0;
+    }
+
+    return value;
+  });
+  const [stars, setStars] = useState<Array<{ active: boolean; id: string }>>(
+    getStars(value)
+  );
+  const isUsingIcons = iconsUsed(props);
+  const [halfStarAt, setHalfStarAt] = useState(Math.floor(value || 0));
+  const [halfStarHidden, setHalfStarHidden] = useState(
+    isHalf && value % 1 < 0.5
+  );
+
+  const isDecimal = (innerValue: number) => innerValue % 1 === 0;
 
   const mouseOver = (event: React.MouseEvent) => {
     if (!edit) return;
